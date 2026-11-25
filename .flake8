@@ -7,15 +7,8 @@ per-file-ignores =
 exclude =
     .git,
     .venv,
-    venv,
-    env,
     .idea,
     __pycache__,
-    .tox,
-    .eggs,
-    *.egg,
     .pytest_cache,
     allure-results,
-    allure-report,
-    main.py,
-    infra/api_core
+    allure-report

@@ -5,14 +5,10 @@ exclude = '''
 /(
     \.git
   | \.venv
-  | venv
-  | env
   | \.idea
   | __pycache__
   | allure-results
   | allure-report
   | \.pytest_cache
-  | main\.py
-  | infra/api_core
 )/
 '''
