@@ -1,5 +1,6 @@
 import datetime
 
+
 # 1. Нормализация email адресов
 def normalize_addresses(value: str) -> str:
     return value.strip().lower()
