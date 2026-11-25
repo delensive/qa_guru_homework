@@ -27,7 +27,9 @@ def test_success_login_with_press_enter():
 def test_wrong_credentials():
     selene.browser.open("https://niffler.qa.guru")
     selene.browser.element('[id="username"]').type("stas")
-    selene.browser.element('[id="password"]').type("12345sgsrgwr").press_enter()
+    selene.browser.element('[id="password"]').type(
+        "12345sgsrgwr"
+    ).press_enter()
 
     selene.browser.element('[class="form__error"]').should(
         selene.have.text("Bad credentials")

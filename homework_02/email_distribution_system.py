@@ -111,7 +111,9 @@ def sender_email(
     sender = normalize_addresses(sender)
     subject = clean_body_text(subject)
     message = clean_body_text(message)
-    recipient_list = [normalize_addresses(recipient) for recipient in correct_recipients]
+    recipient_list = [
+        normalize_addresses(recipient) for recipient in correct_recipients
+    ]
 
     emails = []
     for recipient in recipient_list:
