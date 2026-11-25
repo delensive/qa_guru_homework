@@ -1,2 +1,0 @@
-selene==2.0.0rc10
-pytest==9.2.0
