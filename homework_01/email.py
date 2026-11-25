@@ -1,12 +1,11 @@
 import datetime
 
-
 # 1. Создайте словарь email:
 email = {
     "subject": "Project collaboration",
     "from": " partner@organization.org ",
     "to": "  lead_dev@icloud.com ",
-    "body": "Hello,\nWe are interested in a partnership.\tPlease reply soon.\nRegards,\nTeam"
+    "body": "Hello,\nWe are interested in a partnership.\tPlease reply soon.\nRegards,\nTeam",
 }
 
 # 2. Добавьте дату отправки:
@@ -27,13 +26,33 @@ email["short_body"] = email["body"][:10] + "..."
 
 # 6. Списки доменов:
 personal_domains = list(
-    {'gmail.com', 'list.ru', 'yahoo.com', 'outlook.com', 'hotmail.com', 'icloud.com', 'yandex.ru', 'mail.ru', 'list.ru',
-     'bk.ru', 'inbox.ru'})
+    {
+        "gmail.com",
+        "list.ru",
+        "yahoo.com",
+        "outlook.com",
+        "hotmail.com",
+        "icloud.com",
+        "yandex.ru",
+        "mail.ru",
+        "list.ru",
+        "bk.ru",
+        "inbox.ru",
+    }
+)
 corporate_domains = list(
-    {'company.ru', 'corporation.com', 'university.edu', 'organization.org', 'company.ru', 'business.net'})
+    {
+        "company.ru",
+        "corporation.com",
+        "university.edu",
+        "organization.org",
+        "company.ru",
+        "business.net",
+    }
+)
 
 # 7. Проверьте что в списке личных и корпоративных доменов нет пересечений:
-checking_intersections = not set(personal_domains) & set (corporate_domains)
+checking_intersections = not set(personal_domains) & set(corporate_domains)
 
 # 8. Проверьте «корпоративность» отправителя:
 is_corporate = domain in corporate_domains
@@ -42,9 +61,11 @@ is_corporate = domain in corporate_domains
 email["clean_body"] = email["body"].replace("\t", " ").replace("\n", " ")
 
 # 10. Сформируйте текст отправленного письма
-email["sent_text"] = (f"Кому: {email['to']}, от {email['from']} "
-                      f"Тема: {email['subject']}, дата {email['date']} "
-                      f"{email['clean_body']}")
+email["sent_text"] = (
+    f"Кому: {email['to']}, от {email['from']} "
+    f"Тема: {email['subject']}, дата {email['date']} "
+    f"{email['clean_body']}"
+)
 
 # 11. Рассчитайте количество страниц печати
 pages = (len(email["sent_text"]) + 499) // 500
@@ -62,7 +83,10 @@ personal_domains.remove("bk.ru")
 
 # Результаты:
 print("email:", email)
-print("login:", login,)
+print(
+    "login:",
+    login,
+)
 print("domain:", domain)
 print("checking_intersections:", checking_intersections)
 print("is_corporate:", is_corporate)
