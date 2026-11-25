@@ -1,6 +1,6 @@
-from selene import browser, be, have
+import selene
 
 
-browser.open('https://github.com/search')
-browser.element('[aria-label="Search GitHub"]').type('qa.guru').press_enter()
-browser.element('[data-testid="results-list"]').should(have.text('QA.GURU'))
+selene.browser.open('https://github.com/search')
+selene.browser.element('[aria-label="Search GitHub"]').type('qa.guru').press_enter()
+selene.browser.element('[data-testid="results-list"]').should(selene.have.text('QA.GURU'))
