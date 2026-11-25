@@ -1,4 +1,6 @@
 import datetime
+
+
 # 1. Создайте словарь email:
 email = {
     "subject": "Project collaboration",
@@ -57,6 +59,7 @@ email["masked_from"] = login[:2] + "***@" + domain
 # 14. Удалите из списка личных доменов:
 personal_domains.remove("list.ru")
 personal_domains.remove("bk.ru")
+
 # Результаты:
 print("email:", email)
 print("login:", login,)
